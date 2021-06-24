@@ -237,8 +237,10 @@
 	}
 }
 
-a.mollie-link {
-	color: $c-primary;
+.shepherd-content {
+	a {
+		color: $c-primary;
+	}
 }
 
 .js-onboardingWizard-singleClick,
