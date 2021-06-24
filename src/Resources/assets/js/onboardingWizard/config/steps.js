@@ -1,7 +1,7 @@
 import {
 	paymentTypeIndicator,
 	methodLoadIndicator,
-	currentStepValidator
+	currentStepValidator,
 } from '../helpers/filterMethod';
 
 export const stepPaymentType = {
@@ -90,7 +90,10 @@ export const steps = [
 	},
 	{
 		showOn: function () {
-			currentStepValidator('.js-onboardingWizard-environment', '.pushable');
+			currentStepValidator(
+				'.js-onboardingWizard-environment',
+				'.pushable'
+			);
 			return true;
 		},
 		id: 'step-env',
@@ -105,7 +108,10 @@ export const steps = [
 	},
 	{
 		showOn: function () {
-			currentStepValidator('.js-two-fields-test .required.field', '.pushable');
+			currentStepValidator(
+				'.js-two-fields-test .required.field',
+				'.pushable'
+			);
 			return paymentTypeIndicator(
 				'.js-onboardingWizard-environment',
 				'0'
@@ -123,8 +129,10 @@ export const steps = [
 	},
 	{
 		showOn: function () {
-			currentStepValidator('.js-onboardingWizard-profile-api', '.pushable');
-			console.log('dupa2')
+			currentStepValidator(
+				'.js-onboardingWizard-profile-api',
+				'.pushable'
+			);
 			return paymentTypeIndicator(
 				'.js-onboardingWizard-environment',
 				'1'
@@ -149,7 +157,10 @@ export const steps = [
 	},
 	{
 		showOn: function () {
-			currentStepValidator('.js-onboardingWizard-mollieComponents', '.pushable');
+			currentStepValidator(
+				'.js-onboardingWizard-mollieComponents',
+				'.pushable'
+			);
 			return true;
 		},
 		id: 'step-mollie-components',
@@ -164,7 +175,10 @@ export const steps = [
 	},
 	{
 		showOn: function () {
-			currentStepValidator('.js-onboardingWizard-singleClick', '.pushable');
+			currentStepValidator(
+				'.js-onboardingWizard-singleClick',
+				'.pushable'
+			);
 			return true;
 		},
 		id: 'step-mollie-payments',
@@ -179,7 +193,11 @@ export const steps = [
 	},
 	{
 		showOn: function () {
-			currentStepValidator('.js-onboardingWizard-load-methods', '.pushable');
+			currentStepValidator(
+				'.js-onboardingWizard-load-methods',
+				'.pushable'
+			);
+			methodLoadIndicator('.js-payment-method-not-loaded', '.pushable');
 			return true;
 		},
 		id: 'step-payments-api',
@@ -194,41 +212,10 @@ export const steps = [
 	},
 	{
 		showOn: function () {
-			currentStepValidator('.js-onboardingWizard-load-methods', '.pushable');
-			return !methodLoadIndicator('.js-payment-method-not-loaded');
-		},
-		id: 'step-methods-required',
-		text: 'stepMethodRequired.text',
-		classes: 'shepherd-element--align-right',
-		highlightClass: 'payment-settings',
-		btnNextText: 'stepButtons.next',
-		attachTo: {
-			element: '.js-onboardingWizard-load-methods #get_methods',
-			on: 'top-start',
-		},
-	},
-	{
-		showOn: function () {
-			return !methodLoadIndicator('.js-payment-method-not-loaded');
-		},
-		id: 'step-finish-wizard-error',
-		title: 'stepErrorTitle.text',
-		text: 'stepErrorDescription.text',
-		highlightClass: 'payment-settings',
-		customButtons: [
-			{
-				text: 'stepButtons.quitConfirm',
-				action: (onboardingWizard) => {
-					onboardingWizard.tour.removeStep('step-quit-confirmation');
-					onboardingWizard.tour.complete();
-				},
-				secondary: true,
-			},
-		],
-	},
-	{
-		showOn: function () {
-			currentStepValidator('.js-onboardingWizard-paymentName', '.pushable');
+			currentStepValidator(
+				'.js-onboardingWizard-paymentName',
+				'.pushable'
+			);
 			return true;
 		},
 		id: 'step-payment-title',
@@ -243,7 +230,10 @@ export const steps = [
 	},
 	{
 		showOn: function () {
-			currentStepValidator('.js-onboardingWizard-customizeMethodImage', '.pushable');
+			currentStepValidator(
+				'.js-onboardingWizard-customizeMethodImage',
+				'.pushable'
+			);
 			return true;
 		},
 		id: 'step-image-upload',
@@ -258,7 +248,10 @@ export const steps = [
 	},
 	{
 		showOn: function () {
-			currentStepValidator('.js-onboardingWizard-countryRestriction', '.pushable');
+			currentStepValidator(
+				'.js-onboardingWizard-countryRestriction',
+				'.pushable'
+			);
 			return true;
 		},
 		id: 'step-country-restriction',
@@ -273,7 +266,10 @@ export const steps = [
 	},
 	{
 		showOn: function () {
-			currentStepValidator('.js-onboardingWizard-PaymentMethod', '.pushable');
+			currentStepValidator(
+				'.js-onboardingWizard-PaymentMethod',
+				'.pushable'
+			);
 			return true;
 		},
 		id: 'step-payment-method',
@@ -286,22 +282,12 @@ export const steps = [
 			on: 'top-start',
 		},
 	},
-	// {
-	// 	showOn: function () {
-	// 		return paymentTypeIndicator(
-	// 			'#sylius_payment_method_gatewayConfig_mollieGatewayConfig_0_paymentType',
-	// 			'PAYMENT_API'
-	// 		);
-	// 	},
-	// 	id: 'step-payments-api',
-	// 	text: 'stepPaymentsAPI.text',
-	// 	classes: 'step-12 shepherd-element--align-right',
-	// 	highlightClass: 'payment-settings',
-	// 	btnNextClass: 'shepherd-button--arrow-down',
-	// },
 	{
 		showOn: function () {
-			currentStepValidator('.js-onboardingWizard-order-number', '.pushable');
+			currentStepValidator(
+				'.js-onboardingWizard-order-number',
+				'.pushable'
+			);
 			return paymentTypeIndicator(
 				'#sylius_payment_method_gatewayConfig_mollieGatewayConfig_0_paymentType',
 				'PAYMENT_API'
@@ -367,5 +353,5 @@ export const steps = [
 		btnNextText: 'stepButtons.finishWizard',
 		btnCollapseClass: 'd-none',
 		btnCloseClass: 'd-none',
-	}
+	},
 ];
