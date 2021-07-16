@@ -7,7 +7,7 @@ const uiBundleResources = path.resolve(syliusBundles, 'UiBundle/Resources/privat
 Encore
     .setOutputPath('public/build/admin/')
     .setPublicPath('/build/admin')
-    .addEntry('admin-entry', '../../src/Resources/assets/js/main.js')
+    .addEntry('admin-entry', '../../src/Resources/assets/entry.js')
     .disableSingleRuntimeChunk()
     .cleanupOutputBeforeBuild()
     .enableSourceMaps(!Encore.isProduction())

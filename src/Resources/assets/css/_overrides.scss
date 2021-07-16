@@ -56,8 +56,8 @@
 
 		&:before {
 			content: '';
-			width: 120px;
-			height: 26px;
+			width: 65px;
+			height: 19px;
 			margin-bottom: 20px;
 			background-repeat: no-repeat;
 			background-size: contain;
@@ -237,6 +237,10 @@
 	}
 }
 
+a.mollie-link {
+	color: $c-primary;
+}
+
 .js-onboardingWizard-singleClick,
 .js-onboardingWizard-mollieComponents {
 	padding: 4px 0;
@@ -248,7 +252,7 @@
 		background-color: $c-secondary;
 		user-select: none;
 
-		&:hover{
+		&:hover {
 			background-color: darken($c-secondary, 10%);
 		}
 	}
