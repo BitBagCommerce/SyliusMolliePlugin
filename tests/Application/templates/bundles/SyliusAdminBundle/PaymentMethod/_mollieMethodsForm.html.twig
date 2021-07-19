@@ -15,10 +15,10 @@
                        class="ui button primary">{{ 'bitbag_sylius_mollie_plugin.ui.load_methods_button'|trans }}</a>
                 </div>
             </div>
-        </div>
-        <div class="sub header">
-            <i class="info circle icon"></i>
-            {{ 'bitbag_sylius_mollie_plugin.ui.you_can_sort_methods_via_drag_and_drop'|trans }}
+            <div class="sub header">
+                <i class="info circle icon"></i>
+                {{ 'bitbag_sylius_mollie_plugin.ui.you_can_sort_methods_via_drag_and_drop'|trans }}
+            </div>
         </div>
     </h4>
     <div
@@ -76,19 +76,23 @@
                             </div>
                         {% endif %}
                     </div>
-                    <div class="field">
-                        {{ form_row(methodForm.country_restriction, { 'attr': { 'class': 'js-onboardingWizard-countryRestriction' } }) }}
-                    </div>
-                    <div class="field">
-                        <div id="country-allowed_{{ loop.index0 }}">
-                            {{ form_row(methodForm.countryLevel_allowed, { 'attr': {'class': 'fluid search'} }) }}
+
+                    <div class="js-onboardingWizard-countryRestrictions">
+                        <div class="field">
+                            {{ form_row(methodForm.country_restriction, { 'attr': { 'class': 'js-onboardingWizard-countryRestriction' } }) }}
+                        </div>
+                        <div class="field">
+                            <div id="country-allowed_{{ loop.index0 }}">
+                                {{ form_row(methodForm.countryLevel_allowed, { 'attr': {'class': 'fluid search'} }) }}
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div id="country-excluded_{{ loop.index0 }}">
+                                {{ form_row(methodForm.countryLevel_excluded, { 'attr': {'class': 'fluid search'} }) }}
+                            </div>
                         </div>
                     </div>
-                    <div class="field">
-                        <div id="country-excluded_{{ loop.index0 }}">
-                            {{ form_row(methodForm.countryLevel_excluded, { 'attr': {'class': 'fluid search'} }) }}
-                        </div>
-                    </div>
+
                     <div class="field">
                         <div class="fields">
                             <div class="twelve wide field">
