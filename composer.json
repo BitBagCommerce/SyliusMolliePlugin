@@ -1,15 +1,15 @@
 {
-    "name": "bitbag/mollie-plugin",
+    "name": "tulik/mollie-plugin",
     "type": "sylius-plugin",
     "description": "Mollie payment plugin for Sylius applications.",
     "license": "MIT",
     "require": {
-        "php": "^7.3",
+        "php": "^7.3 || ^8.0",
         "sylius/sylius": "^1.8",
         "symfony/messenger": "^4.4 || ^5.2",
         "mollie/mollie-api-php": "^2.0",
-        "sylius/refund-plugin": "1.0.0-RC.9",
-        "sylius/admin-order-creation-plugin": "^0.11",
+        "sylius/refund-plugin": "dev-master",
+        "tulik/admin-order-creation-plugin": "dev-master",
         "ext-json": "*",
         "symfony/webpack-encore-bundle": "^1.11"
     },
